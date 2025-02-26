@@ -21,6 +21,23 @@ app.get("/api/products", (req, res) => {
     });
 });
 
+//product detail page
+app.get('/api/products/:slug', (req, res) => {
+    const { slug } = req.params;
+    db.get('SELECT * FROM products WHERE slug = ?', [slug], (err, product) => {
+      if (err) {
+        res.status(500).json({ error: 'Database error' });
+        return;
+      }
+      if (!product) {
+        res.status(404).json({ error: 'Product not found' });
+        return;
+      }
+      res.json(product);
+    });
+  });
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
