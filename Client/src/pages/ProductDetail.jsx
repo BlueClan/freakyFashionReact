@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import InfoGrid from '../components/InfoGrid';
 import Product from '../components/Product';
 import SimilarProducts from '../components/SimilarProducts';
-import '../Styles/ProductDetail.css';
+import '../Styles/Home.css';
 
 const ProductDetail = () => {
   const { slug } = useParams(); // Get the product slug from the URL

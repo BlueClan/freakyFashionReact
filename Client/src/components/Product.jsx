@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import '../Styles/ProductDetail.css';
+import '../Styles/Home.css';
 
 const Product = ({ slug }) => {
   const [product, setProduct] = useState(null);

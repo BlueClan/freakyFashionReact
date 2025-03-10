@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: rgb(199, 217, 221);
 }
 
 header {
-    background-color: #b25e5e;
+    background-color: rgb(173, 178, 212);
     padding: 20px;
-    color: rgb(8, 8, 8);
+    
 }
 
 .header-container {
@@ -25,7 +25,6 @@ header {
     height: auto;  
 }
 
-
 .search-container {
     display: flex;
     flex-direction: row;
@@ -35,14 +34,14 @@ header {
     padding: 10px 0;
 }
 
-
 .search-bar {
     width: 80%; 
     padding: 8px;
     gap: 20px;
     border-radius: 25px;
     box-shadow: 0 2px 5px rgb(8, 8, 8);
-    background-color: #a9a0a0;
+    background-color: rgb(199, 217, 221);
+    color: #333;
 }
 .icons {
     color: #ddd;
@@ -114,8 +113,8 @@ header {
 
 .hero {
     padding: 50px 20px;
-    background-color: rgba(207, 97, 97, 0.273);
-    color: white;
+    background-color: rgb(213, 229, 213);
+    color: black;
     text-align: center;
     margin: 40px auto; 
     max-width: 1200px; 
@@ -202,16 +201,6 @@ header {
     object-fit: cover; 
 }
 
-.spot-text {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); /*position in the center */
-    color: white; 
-    font-size: 1.5rem; 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
-}
-
 /* Media query for >= 1024px */
 @media (min-width: 1024px) {
     .spots {
@@ -246,10 +235,10 @@ header {
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
-    background-color: white;
     transition: transform 0.3s ease;
     display: flex;
-    flex-direction: column; /* Stack image and details vertically */
+    flex-direction: column;
+    background-color: rgb(238, 241, 218);
   }
   
   .product-card:hover {
@@ -279,8 +268,8 @@ header {
   
   .product-info {
     display: grid;
-    grid-template-columns: 1fr auto; /* Name on the left, price on the right */
-    gap: 10px; /* Space between name and price */
+    grid-template-columns: 1fr auto;
+    gap: 10px; 
     padding: 10px;
   }
   
@@ -296,16 +285,16 @@ header {
     font-size: 1rem;
     margin: 0;
     font-weight: bold;
-    text-align: right; /* Align price to the right */
+    text-align: right; 
   }
   
   .brand {
-    grid-column: 1 / -1; /* Make the brand span across both columns */
-    text-align: left; /* Align brand to the left */
-    padding: 0 10px 10px 10px; /* Add padding to match the layout */
+    grid-column: 1 / -1; 
+    text-align: left; 
+    padding: 0 10px 10px 10px; 
     font-size: 0.8rem;
     margin: 0;
-    color: #777; /* Slightly lighter color for the brand */
+    color: #777; 
   }
 
 /* Responsive Layout: 2 Columns for screens >= 640px */
@@ -322,6 +311,127 @@ header {
     }
 }
 
+/*Styling for the ProductDetail page */
+.product-details {
+    padding: 20px;
+    max-width: 1200px; /* Limit the width of the product details section */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items on mobile */
+    background-color:rgb(213, 229, 213);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%; /* Full width on mobile */
+    margin-right: 0; /* Remove margin on mobile */
+}
+
+.product-image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin-top: 20px;
+    color: grey;
+}
+
+.add-to-cart-btn {
+    width: 100%; /* Full width on mobile */
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for larger screens (>= 640px) */
+@media (min-width: 640px) {
+    .product-card {
+        flex-direction: row; /* Side-by-side layout */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .product-image-container {
+        width: 50%; /* Half width for the image */
+        margin-right: 20px; /* Add space between image and details */
+    }
+
+    .product-info {
+        width: 50%; /* Half width for the details */
+        margin-top: 0; /* Remove margin on larger screens */
+    }
+
+    .add-to-cart-btn {
+        width: auto; /* Auto width for the button */
+        padding: 12px 24px; /* Adjust padding for larger screens */
+    }
+}
+.similar-products {
+    display: none; /* Hide in mobile view */
+}
+
+@media (min-width: 640px) {
+    .similar-products {
+        display: block; 
+    }
+
+    .similar-products h3 {
+        text-align: center; 
+        margin-bottom: 20px; 
+        color:#030303    
+    }
+   
+    .similar-product-grid {
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; 
+    }
+}
+
+.similar-product-card {
+    text-align: center; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px; 
+    background-color:rgb(213, 229, 213); 
+}
+
+.small-product-image {
+    width: 80%; 
+    height: auto; 
+    border-radius: 5px; 
+}
+
+.small-product-info {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 5px; 
+}
+
+
 .info-grid {
     display: grid;
     grid-template-columns: 1fr; 
@@ -333,9 +443,9 @@ header {
 
 .info-item {
     justify-content: center; 
-    background-color: #f4f4f4; 
+    background-color: rgb(199, 217, 221); 
     padding: 20px; 
-    transition: background-color 0.5s; /* Transition effect */
+    transition: background-color 0.5s;
 }
 
 .info-item:hover {
@@ -365,7 +475,6 @@ header {
     display: block; 
 }
 
-/* hide normal footer for larger screens */
 .footer-content {
     display: none; 
 }
@@ -383,8 +492,7 @@ header {
     }
 
     footer {
-        background-color: #b25e5e; 
-        color: white;
+        background-color: rgb(173, 178, 212); 
         padding: 20px; 
     }
     
@@ -408,7 +516,7 @@ header {
 
     /* Styling for the accordion */
     .accordion {
-        background-color: #eee;
+        background-color: rgb(199, 217, 221);
         color: #444;
         cursor: pointer;
         padding: 18px;
@@ -422,7 +530,7 @@ header {
     
     .accordion:after {
         content: '\002B'; /* Plus sign */
-        color: #b25e5e;;
+        color: rgb(173, 178, 212);
         font-weight: bold;
         float: right;
         margin-left: 5px;
@@ -439,7 +547,7 @@ header {
     
     .panel {
         padding: 0 18px;
-        background-color: rgb(156, 112, 112);
+        background-color: rgb(173, 178, 212);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
@@ -457,7 +565,7 @@ header {
     }
 
     footer {
-        background-color: #b25e5e;
+        background-color: rgb(173, 178, 212);
         color: white;
         padding: 20px;
     }
