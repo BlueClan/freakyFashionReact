@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./pages/Home"; 
 import ProductDetail from "./pages/ProductDetail"; 
-import AdminProduct from "./pages/AdminProduct";
+import AdminProducts from "./pages/AdminProducts";
 import AdminNew from "./pages/AdminNew";
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ function App() {
         <Route path="/products/:slug" element={<ProductDetail />} />
 
         {/* Admin Pages */}
-        <Route path="/admin" element={<AdminProduct />} />
+        <Route path="/admin/products" element={<AdminProducts />} />
         <Route path="/admin/new" element={<AdminNew />} />
         
       </Routes>

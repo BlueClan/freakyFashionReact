@@ -267,17 +267,21 @@ header {
   }
   
   .product-info {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap ;
     grid-template-columns: 1fr auto;
     gap: 10px; 
     padding: 10px;
+    grid-auto-rows: auto;
+
   }
   
   .product-name {
     color: #333;
     font-size: 1rem;
     margin: 0;
-    text-align: left; /* Align name to the left */
+    text-align: left;
   }
   
   .product-price {
@@ -314,8 +318,9 @@ header {
 /*Styling for the ProductDetail page */
 .product-details {
     padding: 20px;
-    max-width: 1200px; /* Limit the width of the product details section */
-    margin: 0 auto; /* Center the section horizontally */
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 60px;
 }
 
 .product-card {
@@ -366,16 +371,16 @@ header {
     background-color: #0056b3;
 }
 
-/* Styles for larger screens (>= 640px) */
+
 @media (min-width: 640px) {
     .product-card {
-        flex-direction: row; /* Side-by-side layout */
-        align-items: flex-start; /* Align items to the top */
+        flex-direction: row; 
+        align-items: flex-start; 
     }
 
     .product-image-container {
-        width: 50%; /* Half width for the image */
-        margin-right: 20px; /* Add space between image and details */
+        width: 50%; 
+        margin-right: 20px; 
     }
 
     .product-info {
@@ -407,6 +412,7 @@ header {
         display: grid; 
         grid-template-columns: repeat(3, 1fr);
         gap: 10px; 
+        padding-left: 60px;
     }
 }
 
