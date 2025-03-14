@@ -3,33 +3,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color:  rgb(213, 229, 213);
 }
 
 /* Admin Header - Full Width */
 .admin-header {
-    background-color: #333;
+    background-color: rgb(173, 178, 212);
     color: white;
     padding: 20px 35px;
     text-align: left;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
-    z-index: 1000; /* Ensure it's on top */
 }
 
 /* Main Content */
 main {
-    margin-left: 15%; /* Make space for sidebar */
-    padding: 50px;
-    width: 300%
-   
+    margin-top: 90px; 
+    margin-left: 15%; 
+    padding: 20px;
+    width:300%;
 }
-
 
 /* Top Section */
 .top-section {
@@ -41,12 +38,6 @@ main {
 }
 
 /* Buttons */
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .new-product-button {
     padding: 10px 15px;
     background-color: #007bff;
@@ -65,10 +56,10 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 20px auto;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    }
 
 th, td {
     padding: 12px 15px;
@@ -82,39 +73,34 @@ th {
 }
 
 td {
-    color: black; /* Ensure text is visible */
+    color: black;
 }
 
-/* Form Styles */
+
+/* Form */
 form {
+    background:rgb(213, 229, 213);
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+    border-radius: 10px;
+    color: #333;
 }
 
-label {
-    font-weight: bold;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-input, select, textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid rgb(213, 229, 213);
     border-radius: 5px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
+    color: #333;
+    background-color: white;
 }

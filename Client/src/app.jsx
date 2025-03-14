@@ -25,7 +25,7 @@ function App() {
 
         {/* Admin Pages */}
         <Route path="/admin/products" element={<AdminProducts />} />
-        <Route path="/admin/new" element={<AdminNew />} />
+        <Route path="/admin/products/new" element={<AdminNew />} />
         
       </Routes>
     </Router>
