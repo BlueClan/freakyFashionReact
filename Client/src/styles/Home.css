@@ -218,6 +218,8 @@ header {
     }
 }
 
+h2 {text-align: center};
+
 .products {
     text-align: center;
     margin: 20px auto;
@@ -236,8 +238,6 @@ header {
     border-radius: 5px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
     background-color: rgb(238, 241, 218);
   }
   
@@ -248,7 +248,7 @@ header {
   .image-container {
     position: relative;
     width: 100%;
-    height: auto; /* Ensure the image scales properly */
+    height: auto; 
   }
   
   .image-container img {
@@ -266,30 +266,28 @@ header {
     cursor: pointer;
   }
   
-  .product-info {
+  .product-name-and-price {
     display: flex;
     flex-direction: row;
+    justify-content: space-between; 
     flex-wrap: nowrap ;
     grid-template-columns: 1fr auto;
     gap: 10px; 
     padding: 10px;
     grid-auto-rows: auto;
-
+   
   }
   
   .product-name {
     color: #333;
     font-size: 1rem;
     margin: 0;
-    text-align: left;
   }
   
   .product-price {
     color: #333;
     font-size: 1rem;
     margin: 0;
-    font-weight: bold;
-    text-align: right; 
   }
   
   .brand {

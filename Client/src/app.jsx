@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail"; 
 import AdminProducts from "./pages/AdminProducts";
 import AdminNew from "./pages/AdminNew";
+import SearchResults from "./pages/SearchResults";
+
 function App() {
   const [products, setProducts] = useState([]);
 
@@ -22,6 +24,9 @@ function App() {
 
         {/* Product Detail Page */}
         <Route path="/products/:slug" element={<ProductDetail />} />
+
+        {/* Search Results Page */}
+        <Route path="/search" element={<SearchResults />} />
 
         {/* Admin Pages */}
         <Route path="/admin/products" element={<AdminProducts />} />

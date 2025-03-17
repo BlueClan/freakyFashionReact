@@ -3,10 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:  rgb(213, 229, 213);
+    background-color: rgb(199, 217, 221);
 }
 
-/* Admin Header - Full Width */
 .admin-header {
     background-color: rgb(173, 178, 212);
     color: white;
@@ -20,7 +19,7 @@ body {
     align-items: center;
 }
 
-/* Main Content */
+
 main {
     margin-top: 90px; 
     margin-left: 15%; 
@@ -57,13 +56,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px auto;
-    background-color: white;
+    background-color: rgb(213, 229, 213);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
 th, td {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 2px solid whitesmoke;
     text-align: left;
 }
 
@@ -102,5 +101,5 @@ form {
     border: 1px solid rgb(213, 229, 213);
     border-radius: 5px;
     color: #333;
-    background-color: white;
+    background-color: whitesmoke;
 }

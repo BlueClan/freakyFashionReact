@@ -1,15 +1,14 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
-const slugify = require("slugify"); // Import slugify at the top
+const slugify = require("slugify");
+const db = new sqlite3.Database("./database/products.db");
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors()); // Allow requests from frontend
 app.use(express.json()); // Parse JSON request bodies
-
-const db = new sqlite3.Database("./database/products.db");
 
 // Get all products
 app.get("/api/products", (req, res) => {
@@ -65,7 +64,7 @@ app.post("/api/products", (req, res) => {
 
         // Return the newly added product (with its ID)
         const newProduct = {
-            id: this.lastID, // SQLite provides the last inserted row ID
+            id: this.lastID, 
             name,
             sku,
             price,
@@ -75,6 +74,28 @@ app.post("/api/products", (req, res) => {
             slug,
         };
         res.status(201).json(newProduct);
+    });
+});
+
+// Search products by name
+app.get("/api/products/search", (req, res) => {
+    const query = req.query.q;
+    if (!query) {
+        return res.status(400).json({ error: "Search query is required" });
+    }
+
+    const sql = "SELECT * FROM products WHERE name LIKE ?";
+    const params = [`%${query}%`];
+
+    db.all(sql, params, (err, products) => {
+        if (err) {
+            console.error("Database error:", err);
+            return res.status(500).json({ error: "Database error" });
+        }
+        if (products.length === 0) {
+            return res.status(404).json({ error: "Product not found" });
+        }
+        res.json(products);
     });
 });
 

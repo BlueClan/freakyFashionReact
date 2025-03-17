@@ -1,8 +1,17 @@
-// src/components/Header.jsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import '../Styles/Home.css';
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (event) => {
+    if (event.key === "Enter" && searchTerm.trim()) {
+      navigate(`/search?q=${searchTerm.trim()}`);
+    }
+  };
+
   return (
     <header>
       <div className="header-container">
@@ -16,7 +25,14 @@ const Header = () => {
           </Link>
         </div>
         <div className="search-container">
-          <input type="text" placeholder="Sök produkt" className="search-bar" />
+          <input
+            type="text"
+            placeholder="Sök produkt"
+            className="search-bar"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleSearch}
+          />
           <div className="icons">
             <Link to="#" className="icon-heart-link">
               <span className="icon-heart-header">

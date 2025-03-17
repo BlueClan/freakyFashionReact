@@ -25,11 +25,11 @@ const ProductGrid = ({ products }) => {
                     <i className="bi bi-heart-fill"></i>
                   </span>
                 </div>
-                <div className="product-info">
-                  <h3 className="product-name">{product.name}, </h3>
+                <div className="product-name-and-price">
+                  <h3 className="product-name">{product.name} </h3>
                   <h3 className="product-price">{product.price} SEK</h3>
                 </div>
-                <p className="brand">{product.brand}</p> {/* Ensure this is outside `.product-info` */}
+                <p className="brand">{product.brand}</p>
               </Link>
             </div>
           ))

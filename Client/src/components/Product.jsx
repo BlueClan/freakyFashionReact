@@ -22,7 +22,6 @@ const Product = ({ slug }) => {
       <div className="product-card">
         <div className="product-image-container">
           <img src={product.image} alt={product.name} />
-          <span className="icon-heart"><i className="bi bi-heart"></i></span>
         </div>
         <div className="product-info">
           <h2 className="product-name">{product.name}</h2>
