@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import AdminHeader from "../components/AdminHeader"; // Import new component
+import SideBar from "../components/SideBar";       // Import new component
 import "../styles/admin.css";
 
 const AdminProducts = () => {
@@ -6,6 +8,7 @@ const AdminProducts = () => {
 
     useEffect(() => {
         fetchProducts();
+        document.title = "Administration";
     }, []);
 
     const fetchProducts = async () => {
@@ -23,40 +26,40 @@ const AdminProducts = () => {
 
     return (
         <div className="admin-container">
-            <header className="admin-header">
-                <h1>Administration</h1>
-            </header>
-         
-            <main>
-                <div className="top-section">
-                    <h2>Produkter</h2>
-                    <a href="/admin/products/new" className="new-product-button">Ny produkt</a>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Namn</th>
-                            <th>SKU</th>
-                            <th>Pris</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.length > 0 ? (
-                            products.map((product) => (
-                                <tr key={product.id || product.sku}>
-                                    <td>{product.name}</td>
-                                    <td>{product.sku}</td>
-                                    <td>{product.price} SEK</td>
-                                </tr>
-                            ))
-                        ) : (
+            <AdminHeader /> {/* Use the new header */}
+            <div className="admin-layout"> {/* New wrapper for layout */}
+                <SideBar /> {/* Sidebar on the left */}
+                <main>
+                    <div className="top-section">
+                        <h2>Produkter</h2>
+                        <a href="/admin/products/new" className="new-product-button">Ny produkt</a>
+                    </div>
+                    <table>
+                        <thead>
                             <tr>
-                                <td colSpan="3">Inga produkter hittades.</td>
+                                <th>Namn</th>
+                                <th>SKU</th>
+                                <th>Pris</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
-            </main>
+                        </thead>
+                        <tbody>
+                            {products.length > 0 ? (
+                                products.map((product) => (
+                                    <tr key={product.id || product.sku}>
+                                        <td>{product.name}</td>
+                                        <td>{product.sku}</td>
+                                        <td>{product.price} SEK</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="3">Inga produkter hittades.</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </main>
+            </div>
         </div>
     );
 };

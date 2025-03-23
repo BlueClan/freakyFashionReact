@@ -313,18 +313,19 @@ h2 {text-align: center};
     }
 }
 
+
+
 /*Styling for the ProductDetail page */
 .product-details {
     padding: 20px;
     margin: 0 auto;
-    width: 100%;
-    padding-left: 60px;
-}
+    width: 90%;
+    }
 
 .product-card {
     display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: center; /* Center items on mobile */
+    flex-direction: column;
+    align-items: center;
     background-color:rgb(213, 229, 213);
     padding: 20px;
     border: 1px solid #ddd;
@@ -335,8 +336,8 @@ h2 {text-align: center};
 
 .product-image-container {
     position: relative;
-    width: 100%; /* Full width on mobile */
-    margin-right: 0; /* Remove margin on mobile */
+    width: 100%; 
+    margin-right: 0;
 }
 
 .product-image-container img {
@@ -353,9 +354,11 @@ h2 {text-align: center};
     color: grey;
 }
 
+
 .add-to-cart-btn {
-    width: 100%; /* Full width on mobile */
-    padding: 12px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -382,8 +385,8 @@ h2 {text-align: center};
     }
 
     .product-info {
-        width: 50%; /* Half width for the details */
-        margin-top: 0; /* Remove margin on larger screens */
+        width: 50%; 
+        margin-top: 0; 
     }
 
     .add-to-cart-btn {
@@ -398,6 +401,7 @@ h2 {text-align: center};
 @media (min-width: 640px) {
     .similar-products {
         display: block; 
+        padding: 20px;
     }
 
     .similar-products h3 {
@@ -410,7 +414,6 @@ h2 {text-align: center};
         display: grid; 
         grid-template-columns: repeat(3, 1fr);
         gap: 10px; 
-        padding-left: 60px;
     }
 }
 
@@ -423,11 +426,16 @@ h2 {text-align: center};
 }
 
 .small-product-image {
-    width: 80%; 
+    width: 90%; 
     height: auto; 
     border-radius: 5px; 
 }
 
+.product-link {
+    text-decoration: none;
+    color: inherit;      
+  }
+  
 .small-product-info {
     display: flex; 
     justify-content: space-between; 

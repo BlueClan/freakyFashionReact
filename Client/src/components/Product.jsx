@@ -9,7 +9,10 @@ const Product = ({ slug }) => {
     // Fetch product details based on the slug
     fetch(`http://localhost:3000/api/products/${slug}`)
       .then((response) => response.json())
-      .then((data) => setProduct(data))
+      .then((data) => {
+        setProduct(data);
+        document.title = `${data.name}`;
+      })
       .catch((error) => console.error('Error fetching product:', error));
   }, [slug]);
 

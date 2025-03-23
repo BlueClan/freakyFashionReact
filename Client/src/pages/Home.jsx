@@ -1,5 +1,3 @@
-// src/pages/Home.jsx
-
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import SpotGrid from "../components/SpotGrid";

@@ -11,22 +11,34 @@ const SearchResults = () => {
   const query = searchParams.get("q");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    document.title = `Sökresultat för "${query}" - Freaky Fashion`;
+  }, [query]);
 
   useEffect(() => {
     const fetchSearchResults = async () => {
-      if (!query) return;
-
-      console.log("Fetching search results for query:", query); // Log the query
-
+      if (!query) {
+        setLoading(false);
+        return;
+      }
+      console.log("Fetching search results for query:", query);
       try {
-        const response = await fetch(`http://localhost:3000/api/search?q=${query}`);
+        const response = await fetch(`http://localhost:3000/api/products/search?q=${query}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
-
-        console.log("Search API response:", data); // Log the API response
-
-        setProducts(data);
+        const formattedData = data.map(product => ({
+          ...product,
+          id: String(product.id), // Convert id to string
+        }));
+        setProducts(formattedData);
+        setError(null);
       } catch (error) {
         console.error("Error fetching search results:", error);
+        setError("Kunde inte hämta sökresultat. Försök igen senare.");
       } finally {
         setLoading(false);
       }
@@ -40,16 +52,16 @@ const SearchResults = () => {
       <Header />
       <div className="content-container">
         <h2>
-          {loading
-            ? "Laddar..."
-            : `Hittade ${products.length} produkter`}
+          {loading ? "Laddar..." : `Hittade ${products.length} produkter`}
         </h2>
         {loading ? (
           <p>Laddar...</p>
+        ) : error ? (
+          <p>{error}</p>
         ) : products.length > 0 ? (
           <ProductGrid products={products} />
         ) : (
-          <p>Inga produkter tillgängliga just nu.</p>
+          <p>Inga produkter hittades.</p>
         )}
       </div>
       <InfoGrid />

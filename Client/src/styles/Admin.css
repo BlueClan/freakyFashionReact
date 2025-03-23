@@ -1,105 +1,161 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(199, 217, 221);
-}
+/* admin.css */
 
-.admin-header {
-    background-color: rgb(173, 178, 212);
-    color: white;
-    padding: 20px 35px;
-    text-align: left;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-}
-
-
-main {
-    margin-top: 90px; 
-    margin-left: 15%; 
+/* General container */
+.admin-container {
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .admin-header {
+    background-color: #f4f4f4;
     padding: 20px;
-    width:300%;
-}
-
-/* Top Section */
-.top-section {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .admin-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  
+  .sidebar {
+    width: 200px;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: calc(100vh - 80px);
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .sidebar a:hover {
+    color: #007bff;
+  }
+  
+  /* Main content */
+  main {
+    flex: 1;
+    padding: 20px 20px 20px 10px; /* Reduce left padding to bring form closer to sidebar */
+  }
+  
+  /* Top section (title) */
+  .top-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    color: #333;
-}
-
-/* Buttons */
-.new-product-button {
-    padding: 10px 15px;
+  }
+  
+  .top-section h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  /* Button for AdminProducts */
+  .new-product-button {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 16px;
     text-decoration: none;
-}
-
-.new-product-button:hover {
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .new-product-button:hover {
     background-color: #0056b3;
-}
-
-/* Table Styles */
-table {
+  }
+  
+  /* Table styling for AdminProducts */
+  table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px auto;
-    background-color: rgb(213, 229, 213);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-th, td {
-    padding: 12px 15px;
-    border: 2px solid whitesmoke;
-    text-align: left;
-}
-
-th {
-    background-color: #757171;
-    color: white;
-}
-
-td {
-    color: black;
-}
-
-
-/* Form */
-form {
-    background:rgb(213, 229, 213);
-    padding: 20px;
-    border-radius: 10px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
     padding: 10px;
-    border: 1px solid rgb(213, 229, 213);
-    border-radius: 5px;
-    color: #333;
-    background-color: whitesmoke;
-}
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Form styling for AdminNew */
+  #new-product-form {
+    max-width: 600px; /* Keep the width */
+    margin: 0; /* Remove auto centering */
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    width: 120px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .add-product-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 20px 0 0; /* Remove auto centering */
+  }
+  
+  .add-product-button:hover {
+    background-color: #0056b3;
+  }
