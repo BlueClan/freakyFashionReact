@@ -7,8 +7,16 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleSearch = (event) => {
-    if (event.key === "Enter" && searchTerm.trim()) {
-      navigate(`/search?q=${searchTerm.trim()}`);
+    event.preventDefault(); // Prevent default form submission
+    if (searchTerm.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      setSearchTerm(""); // Clear the input after search
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch(event);
     }
   };
 
@@ -18,21 +26,23 @@ const Header = () => {
         <div className="logo">
           <Link to="/">
             <img
-              src="https://placehold.co/600x400/black/white?text=LOGO"
+              src="https://placehold.co/600x300/black/white?text=LOGO"
               alt="Freaky Fashion Logo"
               className="logo-image"
             />
           </Link>
         </div>
         <div className="search-container">
-          <input
-            type="text"
-            placeholder="Sök produkt"
-            className="search-bar"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleSearch}
-          />
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Sök produkt"
+              className="search-bar"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+          </form>
           <div className="icons">
             <Link to="#" className="icon-heart-link">
               <span className="icon-heart-header">

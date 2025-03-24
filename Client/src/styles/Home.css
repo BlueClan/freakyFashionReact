@@ -25,6 +25,12 @@ header {
     height: auto;  
 }
 
+
+.search-container form {
+    width: 80%; /* Make the form take the full width of the container */
+    
+  }
+
 .search-container {
     display: flex;
     flex-direction: row;
@@ -34,16 +40,17 @@ header {
     padding: 10px 0;
 }
 
+
 .search-bar {
-    width: 80%; 
+    width: 100%;
     padding: 8px;
     gap: 20px;
     border-radius: 25px;
     box-shadow: 0 2px 5px rgb(8, 8, 8);
     background-color: rgb(199, 217, 221);
-    color: #333;
 }
 .icons {
+    display: flex;
     color: #ddd;
     font-size: 25px;
     padding-left: 4px;

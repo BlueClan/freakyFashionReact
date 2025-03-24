@@ -19,6 +19,25 @@ app.get("/api/products", (req, res) => {
   });
 });
 
+app.get("/api/products/search", (req, res) => {
+  const query = req.query.q;
+  if (!query) {
+    return res.status(400).json({ error: "Search query required" });
+  }
+  const searchTerm = `%${query.toLowerCase()}%`;
+  db.all(
+    "SELECT * FROM products WHERE LOWER(name) LIKE ?",
+    [searchTerm],
+    (err, products) => {
+      if (err) {
+        console.error("Database error during search:", err.message);
+        return res.status(500).json({ error: "Database error" });
+      }
+      res.json(products || []);
+    }
+  );
+});
+
 app.get("/api/products/:slug", (req, res) => {
   const { slug } = req.params;
   db.get("SELECT * FROM products WHERE slug = ?", [slug], (err, product) => {
@@ -30,23 +49,6 @@ app.get("/api/products/:slug", (req, res) => {
     }
     res.json(product);
   });
-});
-
-app.get("/api/products/search", (req, res) => {
-  const query = req.query.q;
-  if (!query) {
-    return res.status(400).json({ error: "Search query required" });
-  }
-  db.all(
-    "SELECT * FROM products WHERE name LIKE ?",
-    [`%${query}%`],
-    (err, products) => {
-      if (err) {
-        return res.status(500).json({ error: "Database error" });
-      }
-      res.json(products || []);
-    }
-  );
 });
 
 app.post("/api/products", (req, res) => {
