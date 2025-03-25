@@ -6,6 +6,8 @@ const SideBar = () => {
     <aside className="sidebar">
       <nav>
         <ul>
+        <li><Link to="/">Hem</Link></li>
+        <li><Link to="/products/svart-tshirt">Topplistan</Link></li>
           <li><Link to="/admin/products">Produkter</Link></li>
           <li><Link to="/admin/products/new">Ny produkt</Link></li>
         </ul>

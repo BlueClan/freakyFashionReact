@@ -45,10 +45,10 @@ const ProductGrid = ({ products }) => {
 ProductGrid.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
+      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       brand: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
     })

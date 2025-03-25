@@ -58,10 +58,10 @@ const Header = () => {
         </div>
       </div>
       <div className="navigation-menu">
-        <p><Link to="#">Nyheter</Link></p>
-        <p><Link to="#">Topplistan</Link></p>
-        <p><Link to="#">Rea</Link></p>
-        <p><Link to="#">Kampanjer</Link></p>
+        <p><Link to="/">Hem</Link></p>
+        <p><Link to="/products/svart-tshirt">Topplistan</Link></p>
+        <p><Link to="/admin/products">Produkter</Link></p>
+        <p><Link to="/admin/products/new">Ny produkt</Link></p>
       </div>
     </header>
   );
