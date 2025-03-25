@@ -59,7 +59,7 @@ const Header = () => {
       </div>
       <div className="navigation-menu">
         <p><Link to="/">Hem</Link></p>
-        <p><Link to="/products/svart-tshirt">Topplistan</Link></p>
+        <p><Link to="/products/svart-tshirt">Bästsäljare</Link></p>
         <p><Link to="/admin/products">Produkter</Link></p>
         <p><Link to="/admin/products/new">Ny produkt</Link></p>
       </div>
