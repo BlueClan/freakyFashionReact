@@ -1,5 +1,5 @@
 // src/components/ProductGrid.jsx
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; //more exp for this part
 import '../Styles/Home.css';
 import PropTypes from 'prop-types';
 

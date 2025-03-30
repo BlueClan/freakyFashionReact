@@ -7,10 +7,10 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleSearch = (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     if (searchTerm.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
-      setSearchTerm(""); // Clear the input after search
+      setSearchTerm("");
     }
   };
 
@@ -39,7 +39,7 @@ const Header = () => {
               placeholder="Sök produkt"
               className="search-bar"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)} // did not understand this//
               onKeyDown={handleKeyDown}
             />
           </form>

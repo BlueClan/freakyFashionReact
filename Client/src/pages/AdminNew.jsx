@@ -51,9 +51,9 @@ const AdminNew = () => {
 
     return (
         <div className="admin-container">
-            <AdminHeader /> {/* Use the new header */}
-            <div className="admin-layout"> {/* New wrapper for layout */}
-                <SideBar /> {/* Sidebar on the left */}
+            <AdminHeader /> 
+            <div className="admin-layout"> 
+                <SideBar /> 
                 <main>
                     <div className="top-section">
                         <h2>Ny produkt</h2>

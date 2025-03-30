@@ -17,7 +17,7 @@ const Product = ({ slug }) => {
   }, [slug]);
 
   if (!product) {
-    return <p>Loading...</p>; // Display a loading message while fetching data
+    return <p>Loading...</p>;
   }
 
   return (

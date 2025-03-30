@@ -8,7 +8,7 @@ import "../Styles/Home.css";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get("q") || ""; // Default to empty string if no query
+  const query = searchParams.get("q") || ""; 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

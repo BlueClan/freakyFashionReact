@@ -20,7 +20,6 @@ const Home = ({ products }) => {
   );
 };
 
-// Prop validation for 'products'
 Home.propTypes = {
   products: PropTypes.array.isRequired,
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import AdminHeader from "../components/AdminHeader"; // Import new component
-import SideBar from "../components/SideBar";       // Import new component
+import AdminHeader from "../components/AdminHeader"; 
+import SideBar from "../components/SideBar";       
 import "../styles/admin.css";
 
 const AdminProducts = () => {
@@ -26,9 +26,9 @@ const AdminProducts = () => {
 
     return (
         <div className="admin-container">
-            <AdminHeader /> {/* Use the new header */}
-            <div className="admin-layout"> {/* New wrapper for layout */}
-                <SideBar /> {/* Sidebar on the left */}
+            <AdminHeader />
+            <div className="admin-layout"> 
+                <SideBar /> 
                 <main>
                     <div className="top-section">
                         <h2>Produkter</h2>

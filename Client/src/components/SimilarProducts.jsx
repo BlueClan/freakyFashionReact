@@ -6,13 +6,13 @@ const SimilarProducts = ({ slug }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch similar products (you can modify this logic as needed)
+    
     fetch('http://localhost:3000/api/products')
       .then((response) => response.json())
       .then((data) => {
         // Filter out the current product based on the slug
         const filteredProducts = data.filter((product) => product.slug !== slug);
-        setSimilarProducts(filteredProducts.slice(0, 3)); // Display first 3 products as similar products
+        setSimilarProducts(filteredProducts.slice(0, 3)); 
       })
       .catch((error) => console.error('Error fetching similar products:', error));
   }, [slug]);
@@ -38,7 +38,7 @@ const SimilarProducts = ({ slug }) => {
   );
 };
 
-// Prop validation for 'slug'
+
 SimilarProducts.propTypes = {
   slug: PropTypes.string.isRequired,
 };

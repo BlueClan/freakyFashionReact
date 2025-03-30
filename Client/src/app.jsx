@@ -19,19 +19,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Home Page - Pass fetched products */}
         <Route path="/" element={<Home products={products} />} />
-
-        {/* Product Detail Page */}
         <Route path="/products/:slug" element={<ProductDetail />} />
-
-        {/* Search Results Page */}
         <Route path="/search" element={<SearchResults />} />
-
-        {/* Admin Pages */}
         <Route path="/admin/products" element={<AdminProducts />} />
         <Route path="/admin/products/new" element={<AdminNew />} />
-        
       </Routes>
     </Router>
   );

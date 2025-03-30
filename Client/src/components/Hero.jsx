@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import '../Styles/Home.css';
 
 const Hero = () => {
