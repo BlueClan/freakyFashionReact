@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"; // Add useEffect
+import { useState, useEffect } from "react"; 
 import { useNavigate } from "react-router-dom";
-import AdminHeader from "../components/AdminHeader"; // Import new component
-import SideBar from "../components/SideBar";       // Import new component
+import AdminHeader from "../components/AdminHeader"; 
+import SideBar from "../components/SideBar";       
 import "../styles/admin.css";
 
 const AdminNew = () => {
@@ -37,15 +37,15 @@ const AdminNew = () => {
             });
 
             if (response.ok) {
-                alert("Produkten har lagts till!");
+                alert("New product added! Good job! :D");
                 navigate("/admin/products");
             } else {
                 const error = await response.json();
-                alert("Ett fel uppstod: " + error.message);
+                alert("Opps, an error occured:(): " + error.message);
             }
         } catch (error) {
             console.error("Fetch error:", error);
-            alert("Ett nätverksfel uppstod.");
+            alert("Network error :'(");
         }
     };
 

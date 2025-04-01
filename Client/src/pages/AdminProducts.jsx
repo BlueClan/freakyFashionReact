@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AdminHeader from "../components/AdminHeader"; 
 import SideBar from "../components/SideBar";       
@@ -32,7 +33,7 @@ const AdminProducts = () => {
                 <main>
                     <div className="top-section">
                         <h2>Produkter</h2>
-                        <a href="/admin/products/new" className="new-product-button">Ny produkt</a>
+                        <Link to="/admin/products/new" className="new-product-button">Ny produkt</Link>
                     </div>
                     <table>
                         <thead>
@@ -45,7 +46,7 @@ const AdminProducts = () => {
                         <tbody>
                             {products.length > 0 ? (
                                 products.map((product) => (
-                                    <tr key={product.id || product.sku}>
+                                    <tr key={product.id}>
                                         <td>{product.name}</td>
                                         <td>{product.sku}</td>
                                         <td>{product.price} SEK</td>

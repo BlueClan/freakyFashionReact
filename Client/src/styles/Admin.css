@@ -1,11 +1,7 @@
-/* admin.css */
-
-/* General container */
 .admin-container {
     min-height: 100vh;
   }
   
-  /* Header */
   .admin-header {
     background-color: #f4f4f4;
     padding: 20px;
@@ -52,13 +48,12 @@
     color: #007bff;
   }
   
-  /* Main content */
+  
   main {
     flex: 1;
-    padding: 20px 20px 20px 10px; /* Reduce left padding to bring form closer to sidebar */
+    padding: 20px 20px 20px 10px; 
   }
   
-  /* Top section (title) */
   .top-section {
     display: flex;
     justify-content: space-between;
@@ -71,7 +66,7 @@
     font-size: 20px;
   }
   
-  /* Button for AdminProducts */
+  
   .new-product-button {
     background-color: #007bff;
     color: white;
@@ -85,7 +80,6 @@
     background-color: #0056b3;
   }
   
-  /* Table styling for AdminProducts */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -112,10 +106,10 @@
     background-color: #f1f1f1;
   }
   
-  /* Form styling for AdminNew */
+  
   #new-product-form {
-    max-width: 600px; /* Keep the width */
-    margin: 0; /* Remove auto centering */
+    max-width: 600px; 
+    margin: 0; 
   }
   
   .form-group {
@@ -153,7 +147,7 @@
     font-size: 14px;
     cursor: pointer;
     display: block;
-    margin: 20px 0 0; /* Remove auto centering */
+    margin: 20px 0 0;
   }
   
   .add-product-button:hover {

@@ -8,7 +8,7 @@ import "../Styles/Home.css";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get("q") || ""; 
+  const query = searchParams.get("q"); 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,9 +21,9 @@ const SearchResults = () => {
 
   useEffect(() => {
     const fetchSearchResults = async () => {
-      setLoading(true); // Reset loading state on new search
-      setError(null); // Reset error state on new search
-      setProducts([]); // Reset products on new search
+      setLoading(true);
+      setError(null); 
+      setProducts([]); 
 
       if (!query) {
         setLoading(false);
@@ -39,21 +39,17 @@ const SearchResults = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        const formattedData = data.map((product) => ({
-          ...product,
-          id: String(product.id),
-        }));
-        setProducts(formattedData);
+        setProducts(data);
       } catch (error) {
         console.error("Error fetching search results:", error);
-        setError("Kunde inte hämta sökresultat. Försök igen senare.");
+        setError("Could not fetch results :'(");
       } finally {
         setLoading(false);
       }
     };
 
     fetchSearchResults();
-  }, [query]); // Re-run when query changes
+  }, [query]);
 
   return (
     <div>
@@ -63,13 +59,13 @@ const SearchResults = () => {
           {loading ? "Laddar..." : `Hittade ${products.length} produkter`}
         </h2>
         {loading ? (
-          <p>Laddar...</p>
+          <p>Loading...</p>
         ) : error ? (
           <p>{error}</p>
         ) : products.length > 0 ? (
           <ProductGrid products={products} />
         ) : (
-          <p>Inga produkter hittades.</p>
+          <p> Inga produkter hittades.</p>
         )}
       </div>
       <InfoGrid />

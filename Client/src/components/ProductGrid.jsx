@@ -1,5 +1,4 @@
-// src/components/ProductGrid.jsx
-import { Link } from "react-router-dom"; //more exp for this part
+import { Link } from "react-router-dom";
 import '../Styles/Home.css';
 import PropTypes from 'prop-types';
 
@@ -8,7 +7,7 @@ const ProductGrid = ({ products }) => {
     <section className="products">
       <div className="product-grid">
         {products.length > 0 ? (
-          products.map((product) => (
+          products.map((product) => ( 
             <div className="product-card" key={product.id}>
               <Link
                 to={`/products/${product.slug}`}
@@ -41,14 +40,13 @@ const ProductGrid = ({ products }) => {
   );
 };
 
-// Correct prop validation
 ProductGrid.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      price: PropTypes.number.isRequired,
       brand: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
     })
